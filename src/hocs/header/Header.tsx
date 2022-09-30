@@ -2,7 +2,6 @@ import Link from 'next/link';
 import React, { FunctionComponent, useState } from 'react';
 import { Container } from '../../components/Container';
 import { HeaderStyle, LogoStyle, NavStyle, ToggleMenuStyle } from './header.styles';
-import { FaHandHoldingHeart, FaCartPlus } from "react-icons/fa";
 import Image from 'next/image';
 
 const Header: FunctionComponent = () => {
@@ -16,9 +15,8 @@ const Header: FunctionComponent = () => {
                             src="/assets/vectors/logo.svg"
                             width={100}
                             height={51}
-                            // width={133}
-                            // height={68}
                             alt="primary logo"
+                            priority
                         />
                     </Link>
                 </div>
@@ -45,38 +43,8 @@ const Header: FunctionComponent = () => {
                             </ul>
                         </li>
                         <li>
-                            <a href="#">Portfolio</a>
-                            <ul>
-                                <li>
-                                    <Link href="/portfolio/services">
-                                        <a onFocus={() => setShowSideBar(false)}>Services</a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/portfolio/experiences">
-                                        <a onFocus={() => setShowSideBar(false)}>Experiences</a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/portfolio/contact">
-                                        <a onFocus={() => setShowSideBar(false)}>Contact</a>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href="/portfolio/about" >
-                                        <a onFocus={() => setShowSideBar(false)}>About</a>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <Link href="#store">
-                                <a onFocus={() => setShowSideBar(false)}>Store <FaCartPlus color='blueviolet' /></a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="#donate" >
-                                <a onFocus={() => setShowSideBar(false)}>Donate <FaHandHoldingHeart color='red' /></a>
+                            <Link href="/about" >
+                                <a onFocus={() => setShowSideBar(false)}>About</a>
                             </Link>
                         </li>
                     </ul>

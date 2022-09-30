@@ -1,10 +1,13 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import AboutCard from '../src/components/AboutCard';
-import ExperiencesCard from '../src/components/ExperiencesCard';
 import Hero from '../src/components/Hero';
 import ServicesCard from '../src/components/ServicesCard';
-import Surveying from '../src/components/Surveying';
+
+import dynamic from 'next/dynamic';
+
+const Surveying = dynamic(() => import(/* webpackChunkName: 'surveying' */ '../src/components/Surveying'));
+const ExperiencesCard = dynamic(() => import(/* webpackChunkName: 'experiencecard' */ '../src/components/ExperiencesCard'));
+const AboutCard = dynamic(() => import(/* webpackChunkName: 'aboutcard' */ '../src/components/AboutCard'));
 
 const Home: NextPage = () => {
   return (

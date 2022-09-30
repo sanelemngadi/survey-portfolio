@@ -12,9 +12,6 @@ interface BgProps {
 export const HeroContainer = styled.div`
     ${PrimaryBg}
     padding: 1rem;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
 
     @media (min-width: 992px){
         margin-bottom: 4rem;
@@ -34,7 +31,6 @@ export const HeroStyle = styled(Container) <BgProps>`
         h1{
             text-align: center;
             font-size: 1.5rem;
-            // font-size: 2.3rem;
         }
         a{
             ${Center};
@@ -92,7 +88,7 @@ export const HeroStyle = styled(Container) <BgProps>`
                 margin: 2rem 0 1rem 0;
             }
         }
-        & > div: last-of-type{
+        & > div:last-of-type{
             justify-content: flex-end; // changed
         }
     }
@@ -140,6 +136,7 @@ const Hero: FunctionComponent<Props> = ({ heading, isCta, link, src, height, wid
                         width={width}
                         height={height}
                         alt={alt}
+                        priority
                     />
                 </div>
             </HeroStyle>

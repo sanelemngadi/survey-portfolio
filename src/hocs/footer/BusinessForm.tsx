@@ -81,19 +81,32 @@ const Form = styled.form`
 const BusinessForm = () => {
     return (
         <Wrapper>
-            <Form  >
+            <Form
+                method='POST'
+                action='/sucess/'
+                name="Contacts"
+                data-netlify="true"
+                onSubmit={() => 'submit'}
+                data-netlify-honeypot='bot-field'
+            >
+
+                <input name="bot-field" style={{ display: "none" }} />
+                <input type="hidden" name="form-name" value='Contacts' />
                 {/* <div> */}
                 <div>
                     <input
                         type="text"
                         placeholder="Your Name *"
+                        name='name'
                         required
+
                     />
                 </div>
                 <div>
                     <input
                         type="email"
                         placeholder="Your Email *"
+                        name='email'
                         required
                     />
                 </div>
@@ -101,6 +114,7 @@ const BusinessForm = () => {
                     <input
                         type="tel"
                         placeholder="Your Phone *"
+                        name='tel'
                         required
                     />
                 </div>
@@ -108,38 +122,42 @@ const BusinessForm = () => {
                     <input
                         type="text"
                         placeholder="Company"
+                        name='co-name'
                     />
                 </div>
                 <div>
-                    <select>
-                        <option>I interested in ...</option>
-                        <option>&nbsp; &nbsp; Logo Design</option>
-                        <option>&nbsp; &nbsp; UX/UI Web Design</option>
-                        <option>&nbsp; &nbsp; Web Development</option>
-                        <option>&nbsp; &nbsp; Poster</option>
-                        <option>&nbsp; &nbsp; Study Map</option>
+                    <select
+                        name='interestedin'
+                    >
+                        <option value=''>I interested in ...</option>
+                        <option value='logo'>&nbsp; &nbsp; Logo Design</option>
+                        <option value='ux-ui'>&nbsp; &nbsp; UX/UI Web Design</option>
+                        <option value='webdev'>&nbsp; &nbsp; Web Development</option>
+                        <option value='poster'>&nbsp; &nbsp; Poster</option>
+                        <option value='map'>&nbsp; &nbsp; Study Map</option>
                         {/* <option>&nbsp; &nbsp; Creative Branding</option> */}
                     </select>
                 </div>
                 <div>
-                    <select>
-                        <option> Expected in</option>
-                        <option>&nbsp; &nbsp; next week</option>
-                        <option>&nbsp; &nbsp; next month</option>
-                        <option>&nbsp; &nbsp; next 2 months</option>
-                        <option>&nbsp; &nbsp; next three months</option>
+                    <select name='expectedin'>
+                        <option value=''> Expected in</option>
+                        <option value='nextweek'>&nbsp; &nbsp; next week</option>
+                        <option value='nextmonth'>&nbsp; &nbsp; next month</option>
+                        <option value='2months'>&nbsp; &nbsp; next 2 months</option>
+                        <option value='3months'>&nbsp; &nbsp; next three months</option>
                     </select>
                 </div>
                 <div>
                     <textarea
                         rows={2}
                         placeholder="Message *"
+                        name='message'
                         required
                     >
                     </textarea>
                 </div>
                 <div>
-                    <button>Send</button>
+                    <button type='submit'>Send</button>
                 </div>
                 {/* </div> */}
             </Form >

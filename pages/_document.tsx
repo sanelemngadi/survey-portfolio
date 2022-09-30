@@ -39,8 +39,7 @@ export default class MyDocument extends Document {
             <Html lang="en">
                 <Head>
                     <meta name="description" content={description} />
-                    <link rel="preconnect" href="https://fonts.googleapis.com" />
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                    <meta content='#fff' name="theme-color" />
                     <link href={fontsUrl} rel="stylesheet" />
                     {/* {this.props.styles} */}
                 </Head>
