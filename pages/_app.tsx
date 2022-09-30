@@ -8,6 +8,7 @@ import Header from '../src/hocs/header/Header';
 import GlobalStyle from '../styles/GlobalStyle';
 import { theme } from "../styles/theme";
 import dynamic from 'next/dynamic';
+import Script from 'next/script';
 
 const Footer = dynamic(() => import(/* webpackChunkName: 'footer' */ '../src/hocs/footer/Footer'));
 
@@ -54,6 +55,18 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Loader />
         )
       }
+      <Script strategy='lazyOnload' src={`https://www.googletagmanager.com/gtag/js?id=G-G-NXJHCDKXGV`} />
+      <Script strategy='lazyOnload'
+        id="sanele-mngadi"
+      >
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          
+          gtag('config', 'G-NXJHCDKXGV');
+          `}
+      </Script>
     </>
   )
 }
